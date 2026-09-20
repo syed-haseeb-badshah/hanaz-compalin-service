@@ -1,0 +1,153 @@
+/* ==========================================================================
+   PRODUCTS PAGE CSS
+   ========================================================================== */
+
+.breadcrumb {
+  padding: var(--space-xl) var(--space-lg);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.breadcrumb a {
+  color: var(--text-heading);
+  transition: opacity var(--duration-fast);
+}
+.breadcrumb a:hover {
+  opacity: 0.6;
+}
+.breadcrumb .sep {
+  margin: 0 8px;
+}
+
+.shop-header h1 {
+  margin-bottom: var(--space-lg);
+}
+
+.filter-chips {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+.filter-chip {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-heading);
+  transition: all var(--duration-base) ease;
+}
+.filter-chip:hover,
+.filter-chip.active {
+  background: var(--text-heading);
+  color: var(--bg-card);
+  border-color: var(--text-heading);
+}
+
+.shop-grid-section {
+  padding-top: 0;
+}
+
+
+
+
+.product-card-info .price {
+  display: flex;
+  align-items: baseline;
+}
+.price-strikethrough {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  margin-left: 8px;
+  font-size: 13px;
+}
+.price-save {
+  font-size: 12px;
+  margin-left: 8px;
+  color: var(--text-muted);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   SHOP PAGE BANNER  (extends .hero-banner from home.css)
+   ========================================================================== */
+
+/* Page-banner variant: shorter height than the full homepage hero */
+.hero-banner--page {
+  min-height: 45vh;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-2xl);
+}
+
+/* Heading inside the page banner — slightly smaller than homepage */
+.hero-banner--page .hero-banner__content h1 {
+  font-size: clamp(32px, 4.5vw, 56px);
+  margin-bottom: var(--space-md);
+}
+
+/* Body text is slightly shorter on a page header vs homepage pitch */
+.hero-banner--page .hero-banner__content p {
+  font-size: 15px;
+  max-width: 400px;
+  margin-bottom: 0; /* No CTA below, so remove bottom margin */
+}
+
+/* Breadcrumb integrated into the content overlay */
+.hero-banner__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.hero-banner__breadcrumb a {
+  color: var(--text-heading);
+  transition: opacity var(--duration-fast) ease;
+}
+
+.hero-banner__breadcrumb a:hover {
+  opacity: 0.6;
+}
+
+.hero-banner__breadcrumb span[aria-hidden] {
+  color: var(--text-muted);
+}
+
+/* Mobile — inherit the stacked layout from home.css media query.
+   The home.css @media (max-width: 768px) block already handles
+   .hero-banner__image, .hero-banner__scrim, .hero-banner__content.
+   We only need to adjust the page-specific overrides. */
+@media (max-width: 768px) {
+  .hero-banner--page {
+    min-height: auto;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-banner--page .hero-banner__content h1 {
+    font-size: clamp(28px, 7vw, 38px);
+  }
+
+  .hero-banner--page .hero-banner__content p {
+    max-width: 100%;
+  }
+
+  /* Breadcrumb stays legible below image on mobile */
+  .hero-banner__breadcrumb {
+    font-size: 12px;
+  }
+}
+
